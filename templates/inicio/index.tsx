@@ -1,4 +1,4 @@
-import { ArrowRight, GithubLogo, LinkedinLogo } from "phosphor-react";
+import { GithubLogo, LinkedinLogo } from "phosphor-react";
 import AvatarImage from "../../assets/AvatarImage";
 import Button from "../../components/Button";
 import { heroContent } from "../../data/siteContent";
@@ -18,7 +18,10 @@ const Inicio = () => {
             ))}
           </div>
           <div className="actions">
-            <a href={heroContent.primaryCta.href}>
+            <a
+              href={heroContent.primaryCta.href}
+              download={heroContent.primaryCta.download}
+            >
               <Button label={heroContent.primaryCta.label} />
             </a>
             <div className="secondary-links">
@@ -39,10 +42,6 @@ const Inicio = () => {
               ))}
             </div>
           </div>
-          <a className="resume-link" href={heroContent.resume.href} download>
-            {heroContent.resume.label}
-            <ArrowRight size={16} />
-          </a>
         </section>
         <section className="visual">
           <AvatarImage />

@@ -21,6 +21,8 @@ const Wrap = styled.footer`
     flex-direction: column;
     gap: 0.8rem;
     color: var(--muted);
+    align-items: center;
+    text-align: center;
 
     strong {
       color: var(--text);
@@ -28,27 +30,10 @@ const Wrap = styled.footer`
     }
   }
 
-  nav {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--muted-strong);
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: var(--text);
-    }
-  }
-
   @media screen and (min-width: 768px) {
     .topline {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
+      text-align: right;
     }
   }
 `;
@@ -59,18 +44,6 @@ const Footer = () => {
       <main>
         <div className="topline">
           <strong>{footerContent.copyright}</strong>
-          <nav>
-            {footerContent.links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
         </div>
       </main>
     </Wrap>

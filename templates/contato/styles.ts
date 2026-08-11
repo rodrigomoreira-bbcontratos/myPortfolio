@@ -66,12 +66,6 @@ export const Wrap = styled.section`
     word-break: break-word;
   }
 
-  .intro {
-    font-size: clamp(2.2rem, 4.5vw, 4rem);
-    line-height: 0.98;
-    letter-spacing: -0.05em;
-  }
-
   .arrow {
     color: var(--muted);
   }

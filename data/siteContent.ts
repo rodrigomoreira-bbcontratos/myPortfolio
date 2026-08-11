@@ -20,8 +20,9 @@ export const heroContent = {
     "Atuo do frontend às APIs, integrações e banco de dados, transformando regras de negócio em software de qualidade.",
   highlights: ["Angular", "TypeScript", "Node.js", "React", "SQL Server"],
   primaryCta: {
-    href: "#experiencia",
-    label: "Ver experiência",
+    href: "/curriculo.pdf",
+    label: "Currículo",
+    download: true,
   },
   secondaryLinks: [
     {
@@ -69,7 +70,6 @@ export const contactSectionContent = {
   title: "Vamos conversar?",
   description:
     "Estou disponível para conversar sobre produto, software e novas oportunidades de atuação.",
-  intro: "Email, GitHub e LinkedIn.",
   links: [
     {
       href: "mailto:drigohenri@gmail.com?subject=Olá!",
@@ -94,14 +94,4 @@ export const contactSectionContent = {
 
 export const footerContent = {
   copyright: "Rodrigo Moreira © 2026",
-  links: [
-    {
-      href: "https://github.com/rodrigomoreira-bbcontratos",
-      label: "GitHub",
-    },
-    {
-      href: "https://www.linkedin.com/in/rodrigohmoreira",
-      label: "LinkedIn",
-    },
-  ],
 };

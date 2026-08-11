@@ -16,7 +16,6 @@ const Contato = () => {
           <p>{contactSectionContent.description}</p>
         </header>
         <section>
-          <div className="intro">{contactSectionContent.intro}</div>
           <div className="contact-list">
             {contactSectionContent.links.map((link) => (
               <a
