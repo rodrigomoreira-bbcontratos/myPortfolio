@@ -1,13 +1,13 @@
-import { ArrowUp, CaretUp } from "phosphor-react";
+import { CaretUp } from "phosphor-react";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MenuMobile from "../components/MenuMobile";
 import Contato from "../templates/contato";
+import Experiencia from "../templates/experiencia";
 import Habilidades from "../templates/habilidades";
 import Inicio from "../templates/inicio";
-import Projetos from "../templates/projetos";
 import Sobre from "../templates/sobre";
 
 type HomeProps = {
@@ -15,19 +15,25 @@ type HomeProps = {
 };
 
 const Wrap = styled.div<HomeProps>`
+  position: relative;
+
   #btn-up {
     position: fixed;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    z-index: 999;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 20;
 
     a {
       display: ${({ isScroll }) => (isScroll ? "flex" : "none")};
-      background: var(--button);
-      color: var(--color);
+      width: 2.75rem;
+      height: 2.75rem;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: var(--background);
       text-decoration: none;
-      padding: 0.5rem;
-      border-radius: 50%;
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
   }
 `;
@@ -38,12 +44,7 @@ const Home = () => {
 
   const handleIsScroll = () => {
     const scrolled = document.documentElement.scrollTop;
-
-    if (scrolled > 300) {
-      setIsScroll(true);
-    } else if (scrolled <= 300) {
-      setIsScroll(false);
-    }
+    setIsScroll(scrolled > 300);
   };
 
   const scrollToTop = () => {
@@ -54,12 +55,15 @@ const Home = () => {
   };
 
   const handleOpen = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
+    setIsOpen((current) => !current);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleIsScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleIsScroll);
+    };
   }, []);
 
   return (
@@ -70,7 +74,7 @@ const Home = () => {
         </div>
       )}
       <div id="btn-up">
-        <a href="#inicio">
+        <a href="#inicio" aria-label="Voltar ao topo">
           <CaretUp size={20} weight="bold" onClick={scrollToTop} />
         </a>
       </div>
@@ -80,14 +84,14 @@ const Home = () => {
       <div>
         <Inicio />
       </div>
-      <div id="sobre">
-        <Sobre />
+      <div id="experiencia">
+        <Experiencia />
       </div>
-      <div id="habilidades">
+      <div id="stack">
         <Habilidades />
       </div>
-      <div id="projetos">
-        <Projetos />
+      <div id="sobre">
+        <Sobre />
       </div>
       <div id="contato">
         <Contato />

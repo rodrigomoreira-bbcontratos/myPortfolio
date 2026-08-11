@@ -1,5 +1,11 @@
 import React from "react";
-import { EnvelopeSimple, Gear, House, Palette, User } from "phosphor-react";
+import {
+  Briefcase,
+  EnvelopeSimple,
+  House,
+  Stack,
+  User,
+} from "phosphor-react";
 import styled from "styled-components";
 
 type MenuMobileProps = {
@@ -13,28 +19,25 @@ const Wrap = styled.menu<MenuMobileProps>`
   top: 0;
   left: 0;
   width: ${({ isOpen }) => (isOpen ? "100%" : "0px")};
-  transition: 0.5s;
-  height: 110vh;
-  grid-gap: 1rem;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.8547794117647058) 65%,
-    rgba(0, 0, 0, 0.6755077030812324) 100%
-  );
-  font-size: 1.1rem;
-  font-weight: 700;
+  height: 100vh;
+  gap: 0.75rem;
+  padding: 6rem 1.5rem 1.5rem;
+  background: rgba(11, 13, 16, 0.98);
+  font-size: 1rem;
+  font-weight: 600;
   z-index: 10;
+  transition: 0.3s ease;
 
   a {
     visibility: ${({ isOpen }) => (!isOpen ? "hidden" : "visible")};
-    text-decoration: none;
-    color: #ffffff;
-    padding: 1.5rem;
-    transition: 0.1s;
     display: flex;
-    grid-gap: 5px;
-    font-weight: 300;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.1rem;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--border-soft);
+    background: var(--surface);
   }
 `;
 
@@ -45,17 +48,17 @@ const MenuMobile = ({ isOpen }: MenuMobileProps) => {
         <House size={20} />
         Inicio
       </a>
+      <a href="#experiencia">
+        <Briefcase size={20} />
+        Experiência
+      </a>
+      <a href="#stack">
+        <Stack size={20} />
+        Stack
+      </a>
       <a href="#sobre">
         <User size={20} />
         Sobre
-      </a>
-      <a href="#habilidades">
-        <Palette size={20} />
-        Habilidades
-      </a>
-      <a href="#projetos">
-        <Gear size={20} />
-        Projetos
       </a>
       <a href="#contato">
         <EnvelopeSimple size={20} />

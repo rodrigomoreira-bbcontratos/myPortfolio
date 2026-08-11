@@ -13,14 +13,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "baseUrl": "./src"
+    "resolveJsonModule": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "assets/CSSImage/index.tsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
